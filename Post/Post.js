@@ -4,19 +4,19 @@ const bodyparser = require("body-parser");
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json());
 
-const data = [];
+const josnData = [];
 
 app.get("/", (res, req) => {
-  req.json(data);
+  req.json(josnData);
 });
 //  Created a POST api (using THUNDER CLIENT) which acccepts a JSON data and sReturn an array of data.
 app.post("/user", (req, res) => {
   const newData = {
-    id: req.body.id,
-    name: req.body.name,
+    bookId: req.body.bookid,
+    title: req.body.title,
   };
-  data.push(newData);
-  res.json(data);
+  josnData.push(newData);
+  res.json(josnData);
 });
 
 app.listen(8081, () => {
