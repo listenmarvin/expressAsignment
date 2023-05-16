@@ -24,7 +24,7 @@ const josnData = [];
 app.get("/", (res, req) => {
   req.json(josnData);
 });
-//  Created a POST api (using THUNDER CLIENT) which acccepts a JSON data and sReturn an array of data.
+//  Created a POST api (using THUNDER CLIENT) which acccepts a JSON data and Return an array of data.
 app.post("/user", (req, res) => {
   const newData = {
     bookId: req.body.bookid,
